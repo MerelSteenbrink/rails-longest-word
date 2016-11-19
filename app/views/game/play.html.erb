@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <h1>*** Welcome at the letters and the words game***</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-md-offset-3">
+        <!-- Here will be a nice grid of letters -->
+        <p>This is your grid:</p>
+        <div class="grid">
+          <% @grid.each  do |letter| %>
+          <%= letter %> -
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 col-md-offset-3">
+        <!-- Here will be a form where the user can input his anwer -->
+        <form action= "/score", method="get">
+          <input type="text" name="guess" placeholder="whats your guess?">
+          <input type="hidden" name="grid" value"<%= @grid %>">
+          <input type="hidden" name="start_time" value"<%= Time.now %>">
+
+          <input type="submit">
+        </form>
+      </div>
+    </div>
+
+  </div>
+</div>
