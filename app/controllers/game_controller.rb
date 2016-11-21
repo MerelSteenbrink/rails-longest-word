@@ -11,7 +11,6 @@ class GameController < ApplicationController
     start_time = params[:start_time]
     grid = params[:grid]
     end_time = Time.now
-    raise "gay"
     @score = run_game(@guess, grid, start_time, end_time)
   end
 
@@ -61,6 +60,8 @@ def dic_check(user_input)
     end
   end
 end
+
+
 
 
 def run_game(attempt, grid, start_time, end_time)
